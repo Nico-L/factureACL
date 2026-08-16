@@ -1,0 +1,35 @@
+<p style="text-align: center;"><img src="https://apitemplateio-user.s3-ap-southeast-1.amazonaws.com/11281/13939/6c04c0c9-f2af-446d-9c0d-e98cbfb84203.png" alt="" width="750" height="125" /></p>
+<p>14 Place de l&rsquo;Eglise &nbsp; &nbsp; &nbsp; &nbsp;<br />38 700 LE SAPPEY-EN-CHARTREUSE &nbsp; &nbsp;<br />Mail: <a href="mailto:bureau.cl@cl-sappey.com" target="_blank" rel="noopener">bureau.cl@cl-sappey.com</a><br />SIRET N&deg; : 349 134 205 00013</p>
+
+<p style="text-align: right"><strong style="font-size: 18px;">FACTURE ACQUITEE référence {{numFacture}}</strong>
+	<br />
+	Le Sappey en Chartreuse, le {{laDate}}
+</p>
+<p>&nbsp;</p>
+<p>Je soussign&eacute; Gilles Della Rosa, tr&eacute;sorier de l&rsquo;association <em>Culture et Loisirs</em> du Sappey en Chartreuse, atteste avoir re&ccedil;u la somme de <strong>{{somme}}&nbsp;&euro;</strong> pour l'inscription sur la saison {{saison}} de l'adh&eacute;rent <strong>{{prenomNom}}</strong> pour l'inscription au(x) cours de :</p>
+
+<div style="margin-left: 2em; margin-right: 2em;margin-top: 1em; margin-bottom: 4em;">
+	<table style="border-collapse: collapse; width: 100%; height: 36px;" border="1" cellpadding="4px">
+		<thead style="background-color: #5db7c5; color: white;">
+			<tr style="height: 18px; text-align: left;">
+				<td style="width: 84.1266%; height: 18px;"><span style="font-size: 12pt;"><strong>Cours</strong></span></td>
+				<td style="width: 15.8734%; height: 18px; text-align: center;"><span style="font-size: 12pt;"><strong>Prix - €</strong></span></td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for section in sections %}
+			<tr style="height: 18px;">
+				<td style="width: 84.1266%; height: 18px; padding-left: 1em;">{{section.titre}}</td>
+				<td style="width: 15.8734%; height: 18px; text-align: center;">{{section.prix}}</td>
+			</tr>
+			{% endfor %}
+			<tr style="height: 18px;">
+				<td style="width: 84.1266%; height: 18px; padding-right: 1em; text-align: right;"><strong>Total</strong></td>
+				<td style="width: 15.8734%; height: 18px; text-align: center;">{{somme}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p><span style="font-weight: 400;">Pour servir et valoir ce que de droit,</span></p>
+<p><img style="text-align: center;" src="https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/taBKCvHQpOHF0HUIw7UjVIUl1wTMw5Wo_804c3bc6d8e389bd57a37ccfdfef4680bfc675c607bf02f22c898be6868edbc2.jpg" alt="" width="200" height="95" /></p>
+<p style="line-height: 1;">&nbsp;</p>
