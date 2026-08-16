@@ -1,35 +1,93 @@
-<p style="text-align: center;"><img src="https://baserow.cl-sappey.com/media/user_files/BxllD1BuOIhJFhzZ7HJrGYOj2YzRaqxe_3cf3e46206e0983ba2576acbf3d4950a88e7b6c21f5bf7e3e637582ca7e0a221.png" alt="" style="width: 100%;height: auto;" /></p>
-<p>14 Place de l&rsquo;Eglise &nbsp; &nbsp; &nbsp; &nbsp;<br />38 700 LE SAPPEY-EN-CHARTREUSE &nbsp; &nbsp;<br />Mail: <a href="mailto:bureau.cl@cl-sappey.com" target="_blank" rel="noopener">bureau.cl@cl-sappey.com</a><br />SIRET N&deg; : 349 134 205 00013</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
 
-<p style="text-align: right"><strong style="font-size: 18px;">FACTURE ACQUITEE r&eacute;f&eacute;rence {{numFacture}}</strong>
-	<br />
-	Le Sappey en Chartreuse, le {{laDate}}
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Image d'en-tête : pleine largeur du contenu, ratio conservé */
+  .header-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Signature : taille fixe, ne pas la forcer à 100% */
+  .signature-image {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<p style="text-align: center;">
+  <img class="header-image"
+       src="https://baserow.cl-sappey.com/media/user_files/BxllD1BuOIhJFhzZ7HJrGYOj2YzRaqxe_3cf3e46206e0983ba2576acbf3d4950a88e7b6c21f5bf7e3e637582ca7e0a221.png"
+       alt="" />
 </p>
+
+<p>14 Place de l&rsquo;Eglise &nbsp; &nbsp; &nbsp; &nbsp;<br />
+38 700 LE SAPPEY-EN-CHARTREUSE &nbsp; &nbsp;<br />
+Mail: <a href="mailto:bureau.cl@cl-sappey.com" target="_blank" rel="noopener">bureau.cl@cl-sappey.com</a><br />
+SIRET N&deg; : 349 134 205 00013</p>
+
+<p style="text-align: right">
+  <strong style="font-size: 18px;">FACTURE ACQUITEE r&eacute;f&eacute;rence {{numFacture}}</strong>
+  <br />
+  Le Sappey en Chartreuse, le {{laDate}}
+</p>
+
 <p>&nbsp;</p>
+
 <p>Je soussign&eacute; Gilles Della Rosa, tr&eacute;sorier de l&rsquo;association <em>Culture et Loisirs</em> du Sappey en Chartreuse, atteste avoir re&ccedil;u la somme de <strong>{{somme}}&nbsp;&euro;</strong> pour l'inscription sur la saison {{saison}} de l'adh&eacute;rent <strong>{{prenomNom}}</strong> pour l'inscription au(x) cours et ateliers de :</p>
 
-<div style="margin-left: 2em; margin-right: 2em;margin-top: 1em; margin-bottom: 4em;">
-	<table style="border-collapse: collapse; width: 100%; height: 36px;" border="1" cellpadding="4px">
-		<thead style="background-color: #5db7c5; color: white;">
-			<tr style="height: 18px; text-align: left;">
-				<td style="width: 84.1266%; height: 18px;"><span style="font-size: 12pt;"><strong>Cours</strong></span></td>
-				<td style="width: 15.8734%; height: 18px; text-align: center;"><span style="font-size: 12pt;"><strong>Prix - &euro;</strong></span></td>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each sections}}
-			<tr style="height: 18px;">
-				<td style="width: 84.1266%; height: 18px; padding-left: 1em;">{{titre}}</td>
-				<td style="width: 15.8734%; height: 18px; text-align: center;">{{prix}}</td>
-			</tr>
-			{{/each}}
-			<tr style="height: 18px;">
-				<td style="width: 84.1266%; height: 18px; padding-right: 1em; text-align: right;"><strong>Total</strong></td>
-				<td style="width: 15.8734%; height: 18px; text-align: center;">{{somme}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div style="margin-left: 2em; margin-right: 2em; margin-top: 1em; margin-bottom: 4em;">
+  <table style="height: 36px;" border="1" cellpadding="4px">
+    <thead style="background-color: #5db7c5; color: white;">
+      <tr style="height: 18px; text-align: left;">
+        <td style="width: 84.1266%; height: 18px;"><span style="font-size: 12pt;"><strong>Cours</strong></span></td>
+        <td style="width: 15.8734%; height: 18px; text-align: center;"><span style="font-size: 12pt;"><strong>Prix - &euro;</strong></span></td>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each sections}}
+      <tr style="height: 18px;">
+        <td style="width: 84.1266%; height: 18px; padding-left: 1em;">{{titre}}</td>
+        <td style="width: 15.8734%; height: 18px; text-align: center;">{{prix}}</td>
+      </tr>
+      {{/each}}
+      <tr style="height: 18px;">
+        <td style="width: 84.1266%; height: 18px; padding-right: 1em; text-align: right;"><strong>Total</strong></td>
+        <td style="width: 15.8734%; height: 18px; text-align: center;">{{somme}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
 <p><span style="font-weight: 400;">Pour servir et valoir ce que de droit,</span></p>
-<p><img style="text-align: center;" src="https://baserow.cl-sappey.com/media/user_files/VnNPUJoorJffXR75lXwyEnRpuDZbGvsm_804c3bc6d8e389bd57a37ccfdfef4680bfc675c607bf02f22c898be6868edbc2.jpg" alt="" width="200" height="95" /></p>
-<p style="line-height: 1;">&nbsp;</p>
+
+<p style="text-align: center;">
+  <img class="signature-image"
+       src="https://baserow.cl-sappey.com/media/user_files/VnNPUJoorJffXR75lXwyEnRpuDZbGvsm_804c3bc6d8e389bd57a37ccfdfef4680bfc675c607bf02f22c898be6868edbc2.jpg"
+       alt="" />
+</p>
+</body>
+</html>
