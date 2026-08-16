@@ -17,12 +17,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			{% for section in sections %}
+			{{#each sections}}
 			<tr style="height: 18px;">
-				<td style="width: 84.1266%; height: 18px; padding-left: 1em;">{{section.titre}}</td>
-				<td style="width: 15.8734%; height: 18px; text-align: center;">{{section.prix}}</td>
+				<td style="width: 84.1266%; height: 18px; padding-left: 1em;">{{titre}}</td>
+				<td style="width: 15.8734%; height: 18px; text-align: center;">{{prix}}</td>
 			</tr>
-			{% endfor %}
+			{{/each}}
 			<tr style="height: 18px;">
 				<td style="width: 84.1266%; height: 18px; padding-right: 1em; text-align: right;"><strong>Total</strong></td>
 				<td style="width: 15.8734%; height: 18px; text-align: center;">{{somme}}</td>
